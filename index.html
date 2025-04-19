@@ -2,48 +2,57 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Te quiero mucho</title>
+  <title>Te quiero mucho 💕</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="roses-container"></div>
-  <div class="butterflies-container"></div>
 
+  <!-- Botón para activar la música -->
+  <button id="playMusic">Reproducir música</button>
+
+  <!-- Reproductor oculto -->
+  <iframe
+    id="musicFrame"
+    class="youtube-audio"
+    src=""
+    allow="autoplay"
+    allowfullscreen
+  ></iframe>
+
+  <!-- Rosas animadas -->
+  <div class="roses-container"></div>
+
+  <!-- Girasol con pétalos girando -->
   <div class="container">
     <div class="sunflower-container">
-      <div class="petals">
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
-        <div class="petal"></div>
+      <div class="rotating-petals">
+        <div class="petal" style="transform: rotate(0deg) translateY(-60px);"></div>
+        <div class="petal" style="transform: rotate(45deg) translateY(-60px);"></div>
+        <div class="petal" style="transform: rotate(90deg) translateY(-60px);"></div>
+        <div class="petal" style="transform: rotate(135deg) translateY(-60px);"></div>
+        <div class="petal" style="transform: rotate(180deg) translateY(-60px);"></div>
+        <div class="petal" style="transform: rotate(225deg) translateY(-60px);"></div>
+        <div class="petal" style="transform: rotate(270deg) translateY(-60px);"></div>
+        <div class="petal" style="transform: rotate(315deg) translateY(-60px);"></div>
       </div>
       <div class="sunflower-center"></div>
       <div class="stem"></div>
       <div class="leaf"></div>
     </div>
 
-    <div class="flowers">
-      <div class="flower pink"></div>
-      <div class="flower blue"></div>
-      <div class="flower purple"></div>
-    </div>
-
-    <h1 class="message">Te quiero mucho</h1>
-    <div class="heart">♥</div>
+    <h1 class="message">Te quiero mucho 💕</h1>
   </div>
 
-  <!-- Música de fondo -->
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-
   <script>
-    // Crea muchas rosas animadas
+    // Reproduce la música al hacer clic
+    document.getElementById('playMusic').addEventListener('click', function () {
+      const iframe = document.getElementById('musicFrame');
+      iframe.src = "https://www.youtube.com/embed/nyuo9-OjNNg?autoplay=1&loop=1&playlist=nyuo9-OjNNg";
+      this.style.display = "none";
+    });
+
+    // Crea las rosas animadas
     for (let i = 0; i < 30; i++) {
       const rose = document.createElement('div');
       rose.classList.add('rose');
@@ -51,16 +60,6 @@
       rose.style.animationDuration = (5 + Math.random() * 5) + 's';
       rose.style.animationDelay = Math.random() * 5 + 's';
       document.querySelector('.roses-container').appendChild(rose);
-    }
-
-    // Crea muchas mariposas animadas
-    for (let i = 0; i < 20; i++) {
-      const butterfly = document.createElement('div');
-      butterfly.classList.add('butterfly');
-      butterfly.style.left = Math.random() * 100 + 'vw';
-      butterfly.style.animationDuration = (5 + Math.random() * 7) + 's';
-      butterfly.style.animationDelay = Math.random() * 5 + 's';
-      document.querySelector('.butterflies-container').appendChild(butterfly);
     }
   </script>
 </body>
