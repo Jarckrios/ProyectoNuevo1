@@ -6,9 +6,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="roses-container"></div>
+
   <div class="container">
     <div class="sunflower-container">
-      <div class="sunflower"></div>
+      <div class="petals">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+      </div>
+      <div class="sunflower-center"></div>
       <div class="stem"></div>
       <div class="leaf"></div>
     </div>
@@ -22,5 +34,17 @@
     <h1 class="message">Te quiero mucho</h1>
     <div class="heart">♥</div>
   </div>
+
+  <script>
+    // Crear muchas rosas flotantes
+    for (let i = 0; i < 30; i++) {
+      const rose = document.createElement('div');
+      rose.classList.add('rose');
+      rose.style.left = Math.random() * 100 + 'vw';
+      rose.style.animationDuration = (5 + Math.random() * 5) + 's';
+      rose.style.animationDelay = Math.random() * 5 + 's';
+      document.querySelector('.roses-container').appendChild(rose);
+    }
+  </script>
 </body>
 </html>
