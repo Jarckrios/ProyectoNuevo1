@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to top, #fefbd8, #d9fdd3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.sunflower {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #ffeb3b 30%, #fbc02d 60%, #f57f17 100%);
+  border-radius: 50%;
+  margin: 20px auto;
+  animation: spin 10s linear infinite;
+}
+
+.flowers {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.flower {
+  width: 40px;
+  height: 40px;
+  background-color: pink;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 192, 203, 0.5);
+  animation: bloom 3s ease-in-out infinite alternate;
+}
+
+.flower.blue {
+  background-color: #add8e6;
+}
+
+.message {
+  font-size: 2em;
+  color: #ff4081;
+  animation: pulse 2s infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bloom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
