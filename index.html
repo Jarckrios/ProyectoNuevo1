@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Te quiero mucho</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="roses-container"></div>
+  <div class="butterflies-container"></div>
+
+  <div class="container">
+    <div class="sunflower-container">
+      <div class="petals">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+      </div>
+      <div class="sunflower-center"></div>
+      <div class="stem"></div>
+      <div class="leaf"></div>
+    </div>
+
+    <div class="flowers">
+      <div class="flower pink"></div>
+      <div class="flower blue"></div>
+      <div class="flower purple"></div>
+    </div>
+
+    <h1 class="message">Te quiero mucho</h1>
+    <div class="heart">♥</div>
+  </div>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script>
+    // Crea muchas rosas animadas
+    for (let i = 0; i < 30; i++) {
+      const rose = document.createElement('div');
+      rose.classList.add('rose');
+      rose.style.left = Math.random() * 100 + 'vw';
+      rose.style.animationDuration = (5 + Math.random() * 5) + 's';
+      rose.style.animationDelay = Math.random() * 5 + 's';
+      document.querySelector('.roses-container').appendChild(rose);
+    }
+
+    // Crea muchas mariposas animadas
+    for (let i = 0; i < 20; i++) {
+      const butterfly = document.createElement('div');
+      butterfly.classList.add('butterfly');
+      butterfly.style.left = Math.random() * 100 + 'vw';
+      butterfly.style.animationDuration = (5 + Math.random() * 7) + 's';
+      butterfly.style.animationDelay = Math.random() * 5 + 's';
+      document.querySelector('.butterflies-container').appendChild(butterfly);
+    }
+  </script>
+</body>
+</html>
